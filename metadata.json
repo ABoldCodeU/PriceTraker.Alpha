@@ -1,0 +1,6 @@
+{
+  "name": " PriceTracker.Alpha",
+  "description": "Una suite completa para el seguimiento de precios, cálculo de elasticidad y limpieza de datos de marcas, aprovechando la IA para obtener información mejorada.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

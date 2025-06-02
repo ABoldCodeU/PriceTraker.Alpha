@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suite de Inteligencia de Precios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        /* Colores base */
+        --black-900: #111111;      /* textos importantes, sidebar bg  */
+        --black-800: #1F1F1F;      /* hover o item activo             */
+        --grey-400: #6B7280;       /* textos muted, encabezados tabla */
+        --grey-300: #9CA3AF;       /* ticks eje Y, footer text        */
+        --grey-200: #D1D5DB;       /* borde inputs y pills            */
+        --grey-100: #EFEFEF;       /* grid charts, divisores tabla    */
+        --white:     #FFFFFF;
+
+        /* Acentos */
+        --lavender-100: #E4D8FF;   /* barras > price-by-store         */
+        --lavender-700: #5A5CF2;   /* línea Walmart                   */
+        --pink-500:    #D0B1FF;    /* línea Garis / segundo dataset   */
+
+        /* Tailwind mapped colors for convenience */
+        --color-primary: var(--lavender-700); /* Main accent for Tailwind's primary */
+        --color-accentSecondary: var(--pink-500);
+        --color-barChartColor: var(--lavender-100);
+      }
+      body {
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        background-color: var(--grey-100); /* Page background */
+      }
+      /* Custom checkbox style to use accent color */
+      .form-checkbox-custom {
+        accent-color: var(--lavender-700);
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              // Base palette from CSS variables
+              'black-900': 'var(--black-900)',
+              'black-800': 'var(--black-800)',
+              'grey-400': 'var(--grey-400)',
+              'grey-300': 'var(--grey-300)',
+              'grey-200': 'var(--grey-200)',
+              'grey-100': 'var(--grey-100)',
+              'white': 'var(--white)',
+              
+              // Accents from CSS variables
+              'lavender-100': 'var(--lavender-100)',
+              'lavender-700': 'var(--lavender-700)',
+              'pink-500': 'var(--pink-500)',
+
+              // Semantic mappings for Tailwind (can override default 'primary', 'secondary')
+              primary: 'var(--lavender-700)', // Main interactive accent
+              accentSecondary: 'var(--pink-500)',
+              barChartColor: 'var(--lavender-100)',
+              
+              sidebarBg: 'var(--black-900)',
+              sidebarActiveBg: 'var(--black-800)',
+              topBarBg: '#0E0E0E', // Specific color from previous mockup, slightly different from black-900
+              contentBorder: 'var(--grey-100)', 
+              textHeader: 'var(--black-900)', // For primary text content
+              textMuted: 'var(--grey-400)', 
+              textLight: '#E5E7EB', // For text on dark backgrounds (sidebar)
+
+              // Removing old blue and specific gray mappings if they conflict
+              // Default Tailwind grays can still be used if needed, e.g. bg-gray-50 for card headers
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "recharts/": "https://esm.sh/recharts@^2.15.3/",
+    "recharts": "https://esm.sh/recharts@^2.15.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
